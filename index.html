@@ -1,0 +1,1482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maleo Preparatory | Premier Education in Nairobi, Kenya</title>
+    <meta name="description" content="Maleo Preparatory in Nairobi provides exceptional education with a focus on holistic development and academic excellence.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #6a0dad;
+            --primary-dark: #4a0a7a;
+            --primary-light: #8a4fc4;
+            --secondary: #ffd700;
+            --accent: #4caf50;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s ease;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+            --border-radius: 12px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--primary-dark);
+            letter-spacing: -0.5px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        a:hover {
+            color: var(--primary-light);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: var(--primary);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background: #e6c300;
+            color: var(--dark);
+        }
+        
+        .section {
+            padding: 6rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1001;
+        }
+        
+        .logo-img {
+            width: 55px;
+            height: 55px;
+            background: var(--primary);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 15px;
+            font-size: 1.3rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .logo h1 {
+            font-size: 1.7rem;
+            margin-bottom: 0;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+        
+        /* Desktop Navigation */
+        .desktop-nav {
+            display: flex;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu > li {
+            position: relative;
+            margin-left: 1.5rem;
+        }
+        
+        .nav-menu a {
+            font-weight: 600;
+            padding: 0.8rem 0.5rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            color: var(--dark);
+            font-size: 1.05rem;
+        }
+        
+        .nav-menu a:hover, 
+        .nav-menu a.active {
+            color: var(--primary);
+        }
+        
+        .nav-menu a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--secondary);
+            transition: var(--transition);
+        }
+        
+        .nav-menu a:hover:after,
+        .nav-menu a.active:after {
+            width: 100%;
+        }
+        
+        /* Dropdown indicator for desktop */
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+        }
+        
+        .dropdown-toggle::after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-left: 5px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .nav-menu > li:hover .dropdown-toggle::after {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 220px;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--border-radius);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            z-index: 100;
+            padding: 0.5rem 0;
+        }
+        
+        .dropdown li {
+            margin: 0;
+        }
+        
+        .dropdown a {
+            padding: 0.8rem 1.5rem;
+            display: block;
+            width: 100%;
+            font-weight: 500;
+        }
+        
+        .dropdown a:after {
+            display: none;
+        }
+        
+        .nav-menu > li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        /* Mobile Navigation */
+        .mobile-toggle {
+            display: none;
+            font-size: 1.7rem;
+            cursor: pointer;
+            color: var(--primary);
+            z-index: 1001;
+        }
+        
+        /* Overlay for mobile menu */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1999;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+        
+        .overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Flyout menu from top */
+        .flyout-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            z-index: 2000;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            overflow-y: auto;
+            padding: 1.5rem;
+            transform: translateY(-100%);
+            max-height: 90vh;
+        }
+        
+        .flyout-menu.active {
+            transform: translateY(0);
+        }
+        
+        .flyout-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .flyout-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .flyout-logo-img {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        
+        .flyout-logo h1 {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+            color: var(--primary);
+        }
+        
+        .flyout-close {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            transition: var(--transition);
+        }
+        
+        .flyout-close:hover {
+            color: var(--primary);
+        }
+        
+        .flyout-nav {
+            list-style: none;
+        }
+        
+        .flyout-nav > li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .flyout-nav a {
+            display: block;
+            padding: 0.8rem 1rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .flyout-nav a:hover, 
+        .flyout-nav a.active {
+            background: rgba(106, 13, 173, 0.08);
+            color: var(--primary);
+        }
+        
+        /* Only show chevron for items with dropdown */
+        .flyout-toggle {
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .flyout-toggle:after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: var(--transition);
+        }
+        
+        .flyout-toggle.active:after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        
+        .flyout-dropdown {
+            padding-left: 1rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+        
+        .flyout-dropdown.active {
+            max-height: 500px;
+        }
+        
+        .flyout-dropdown li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .flyout-dropdown a {
+            font-size: 0.9rem;
+            padding: 0.6rem 1rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(106, 13, 173, 0.85), rgba(74, 10, 122, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 70px;
+            position: relative;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+        
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* Featured Cards */
+        .features {
+            background: white;
+            padding: 4rem 0;
+            position: relative;
+            z-index: 10;
+            margin-top: -40px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .feature-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            background: rgba(106, 13, 173, 0.1);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-gray);
+            position: relative;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            height: 450px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            position: relative;
+        }
+        
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px dashed rgba(255,255,255,0.5);
+            border-radius: var(--border-radius);
+            pointer-events: none;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Academics */
+        .academics {
+            background-color: white;
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .program-card {
+            background: var(--light);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid rgba(106, 13, 173, 0.1);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .program-image {
+            height: 220px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+        }
+        
+        .program-content {
+            padding: 2rem;
+        }
+        
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 2px solid rgba(106, 13, 173, 0.1);
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .news-image {
+            height: 220px;
+            background: linear-gradient(45deg, var(--primary), var(--primary-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3.5rem;
+        }
+        
+        .news-content {
+            padding: 2rem;
+        }
+        
+        .news-date {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        
+        /* Contact */
+        .contact {
+            background: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        
+        .contact-info {
+            background: var(--primary);
+            color: white;
+            padding: 3.5rem;
+        }
+        
+        .contact-info h2 {
+            color: white;
+        }
+        
+        .contact-details {
+            margin: 2.5rem 0;
+        }
+        
+        .contact-item {
+            display: flex;
+            margin-bottom: 1.8rem;
+            align-items: flex-start;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            margin-right: 1.2rem;
+            color: var(--secondary);
+            min-width: 30px;
+        }
+        
+        .contact-form {
+            padding: 3.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--light-gray);
+            border-radius: var(--border-radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 0 1.5rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .footer-col h3 {
+            color: var(--secondary);
+            margin-bottom: 1.8rem;
+            font-size: 1.4rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+            font-size: 1.2rem;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 400px;
+                order: -1;
+            }
+            
+            .contact {
+                background: var(--primary);
+            }
+            
+            .desktop-nav {
+                display: none;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+        }
+        
+        @media (min-width: 993px) {
+            .flyout-menu {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: center;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.4rem;
+            }
+            
+            .logo-img {
+                width: 45px;
+                height: 45px;
+                font-size: 1.1rem;
+            }
+            
+            .flyout-menu {
+                max-height: 80vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Overlay for mobile menu -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Flyout Menu (for mobile) -->
+    <div class="flyout-menu" id="flyoutMenu">
+        <div class="flyout-header">
+            <div class="flyout-logo">
+                <div class="flyout-logo-img">MP</div>
+                <h1>Maleo Preparatory</h1>
+            </div>
+            <div class="flyout-close" id="closeFlyout">
+                <i class="fas fa-times"></i>
+            </div>
+        </div>
+        <ul class="flyout-nav">
+            <li><a href="#" class="active">Home</a></li>
+            <li>
+                <a href="#about" class="flyout-toggle" id="aboutToggle">About</a>
+                <ul class="flyout-dropdown" id="aboutDropdown">
+                    <li><a href="#mission">Mission & Vision</a></li>
+                    <li><a href="#leadership">Leadership</a></li>
+                    <li><a href="#accreditations">Accreditations</a></li>
+                    <li><a href="#history">History</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#academics" class="flyout-toggle" id="academicsToggle">Academics</a>
+                <ul class="flyout-dropdown" id="academicsDropdown">
+                    <li><a href="#programs">Programs</a></li>
+                    <li><a href="#curriculum">Curriculum</a></li>
+                    <li><a href="#calendar">Academic Calendar</a></li>
+                    <li><a href="#sen">SEN Program</a></li>
+                </ul>
+            </li>
+            <li><a href="#admissions">Admissions</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">MP</div>
+                <h1>Maleo Preparatory</h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li>
+                        <a href="#about" class="dropdown-toggle">About <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#mission">Mission & Vision</a></li>
+                            <li><a href="#leadership">Leadership</a></li>
+                            <li><a href="#accreditations">Accreditations</a></li>
+                            <li><a href="#history">History</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#academics" class="dropdown-toggle">Academics <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#programs">Programs</a></li>
+                            <li><a href="#curriculum">Curriculum</a></li>
+                            <li><a href="#calendar">Academic Calendar</a></li>
+                            <li><a href="#sen">SEN Program</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#admissions">Admissions</a></li>
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Toggle -->
+            <div class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Shaping Future Leaders Through Excellence</h1>
+            <p>Maleo Preparatory provides a nurturing environment that inspires young minds to achieve their full potential in academics, arts, and athletics.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-secondary">Schedule a Visit</a>
+                <a href="#admissions" class="btn">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Cards -->
+    <section class="features section">
+        <div class="container">
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Academic Excellence</h3>
+                    <p>Ranked among the top preparatory schools in Nairobi for academic achievement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3>Holistic Development</h3>
+                    <p>Focus on academic, physical, emotional, and social growth of every child.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Global Citizenship</h3>
+                    <p>Developing responsible global citizens with international perspective.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our School</h2>
+                <p>Discover the Maleo difference</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Established in 2005, Maleo Preparatory has been at the forefront of providing quality education in Nairobi for over 18 years. Our mission is to cultivate intellectual curiosity, foster creativity, and develop responsible global citizens.</p>
+                    <p>Our campus, located in the heart of Nairobi, offers state-of-the-art facilities including modern classrooms, science laboratories, a library, sports fields, and dedicated art and music studios.</p>
+                    <div style="margin-top: 2.5rem;">
+                        <a href="#mission" class="btn">Learn More About Us</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-school"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academics Section -->
+    <section id="academics" class="section academics">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Programs</h2>
+                <p>Excellence in education</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <div class="program-content">
+                        <h3>Early Years (Ages 3-5)</h3>
+                        <p>Our play-based curriculum focuses on developing social, emotional, and cognitive skills through exploration and discovery.</p>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-image">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="program-content">
+                        <h3>Primary (Grades 1-6)</h3>
+                        <p>A comprehensive curriculum that develops foundational skills in literacy, numeracy, science, and social studies.</p>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-image">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <div class="program-content">
+                        <h3>Enrichment Programs</h3>
+                        <p>Specialized programs in music, arts, sports, coding, and foreign languages to complement academic learning.</p>
+                        <a href="#" class="btn btn-secondary" style="margin-top: 1.5rem;">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admissions Section -->
+    <section id="admissions" class="section" style="background-color: var(--light-gray);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Admissions</h2>
+                <p>Join our learning community</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+                <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                    <h3><i class="fas fa-calendar-check" style="color: var(--secondary); margin-right: 10px;"></i> Admissions Process</h3>
+                    <p style="margin: 1.2rem 0;">Our admissions process is designed to be straightforward and welcoming for new families.</p>
+                    <ul style="margin: 1.5rem 0 1.5rem 2rem; list-style-type: none;">
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0;"></i>
+                            Submit inquiry form
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0;"></i>
+                            Schedule a campus tour
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0;"></i>
+                            Complete application
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0;"></i>
+                            Student assessment
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-check-circle" style="color: var(--primary); position: absolute; left: 0;"></i>
+                            Enrollment
+                        </li>
+                    </ul>
+                    <a href="#" class="btn" style="margin-top: 1rem;">Apply Now</a>
+                </div>
+                
+                <div style="background: white; padding: 2.5rem; border-radius: var(--border-radius); box-shadow: var(--shadow);">
+                    <h3><i class="fas fa-graduation-cap" style="color: var(--secondary); margin-right: 10px;"></i> Scholarships</h3>
+                    <p style="margin: 1.2rem 0;">We offer merit-based scholarships and need-based financial aid to qualified students.</p>
+                    <ul style="margin: 1.5rem 0 1.5rem 2rem; list-style-type: none;">
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-star" style="color: var(--secondary); position: absolute; left: 0;"></i>
+                            Academic Excellence Scholarship
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-star" style="color: var(--secondary); position: absolute; left: 0;"></i>
+                            Arts & Sports Scholarships
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-star" style="color: var(--secondary); position: absolute; left: 0;"></i>
+                            Financial Aid Program
+                        </li>
+                        <li style="margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem;">
+                            <i class="fas fa-star" style="color: var(--secondary); position: absolute; left: 0;"></i>
+                            Sibling Discounts
+                        </li>
+                    </ul>
+                    <a href="#" class="btn" style="margin-top: 1rem;">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>News & Events</h2>
+                <p>Stay updated with our community</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">June 15, 2023</span>
+                        <h3>Annual Sports Day Champions</h3>
+                        <p>Our students showcased incredible talent and sportsmanship at our Annual Sports Day. Congratulations to all participants!</p>
+                        <a href="#" style="display: inline-block; margin-top: 1.2rem; color: var(--primary); font-weight: 600;">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">May 28, 2023</span>
+                        <h3>Science Fair Winners</h3>
+                        <p>Maleo students won three awards at the Nairobi Regional Science Fair for their innovative projects on renewable energy.</p>
+                        <a href="#" style="display: inline-block; margin-top: 1.2rem; color: var(--primary); font-weight: 600;">Read More →</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-image">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">April 10, 2023</span>
+                        <h3>New Learning Commons Opens</h3>
+                        <p>Our newly renovated library and learning commons is now open, featuring state-of-the-art technology and collaborative spaces.</p>
+                        <a href="#" style="display: inline-block; margin-top: 1.2rem; color: var(--primary); font-weight: 600;">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 3.5rem;">
+                <a href="#" class="btn">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Contact Us</h2>
+                    <p>We'd love to hear from you. Reach out to schedule a tour or learn more about our programs.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Education Road, Westlands<br>Nairobi, Kenya</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+254 700 123 456</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>admissions@maleopreparatory.edu</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Monday-Friday: 8:00 AM - 5:00 PM<br>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="" disabled selected>I'm interested in...</option>
+                                <option>Early Years Program</option>
+                                <option>Primary Program</option>
+                                <option>Admissions Process</option>
+                                <option>School Tour</option>
+                                <option>Other Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <div class="logo-img" style="background: var(--secondary); color: var(--dark);">MP</div>
+                        <!--<div class="logo-text">Maleo Preparatory</div>-->
+                    </div>
+                    <p style="margin-top: 1.5rem; color: rgba(255,255,255,0.8);">Providing quality education in Nairobi since 2005. Nurturing young minds to become tomorrow's leaders.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#academics">Academics</a></li>
+                        <li><a href="#admissions">Admissions</a></li>
+                        <li><a href="#news">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Programs</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Early Years</a></li>
+                        <li><a href="#">Primary School</a></li>
+                        <li><a href="#">Enrichment Programs</a></li>
+                        <li><a href="#">After School Care</a></li>
+                        <li><a href="#">Summer Camp</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> 123 Education Road, Nairobi</a></li>
+                        <li><a href="tel:+254700123456"><i class="fas fa-phone-alt" style="margin-right: 10px;"></i> +254 700 123 456</a></li>
+                        <li><a href="mailto:info@maleopreparatory.edu"><i class="fas fa-envelope" style="margin-right: 10px;"></i> info@maleopreparatory</a></li>
+                        <li><a href="#"><i class="fas fa-clock" style="margin-right: 10px;"></i> Mon-Fri: 8:00AM - 5:00PM</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; <span id="currentYear"></span> Maleo Preparatory School. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Mobile navigation toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const flyoutMenu = document.getElementById('flyoutMenu');
+        const closeFlyout = document.getElementById('closeFlyout');
+        const overlay = document.getElementById('overlay');
+        
+        function openMenu() {
+            flyoutMenu.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeMenu() {
+            flyoutMenu.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        mobileToggle.addEventListener('click', openMenu);
+        closeFlyout.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+        
+        // Flyout dropdowns
+        const aboutToggle = document.getElementById('aboutToggle');
+        const aboutDropdown = document.getElementById('aboutDropdown');
+        const academicsToggle = document.getElementById('academicsToggle');
+        const academicsDropdown = document.getElementById('academicsDropdown');
+        
+        aboutToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            aboutDropdown.classList.toggle('active');
+            aboutToggle.classList.toggle('active');
+        });
+        
+        academicsToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            academicsDropdown.classList.toggle('active');
+            academicsToggle.classList.toggle('active');
+        });
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!aboutToggle.contains(e.target) && !aboutDropdown.contains(e.target)) {
+                aboutDropdown.classList.remove('active');
+                aboutToggle.classList.remove('active');
+            }
+            if (!academicsToggle.contains(e.target) && !academicsDropdown.contains(e.target)) {
+                academicsDropdown.classList.remove('active');
+                academicsToggle.classList.remove('active');
+            }
+        });
+        
+        // Back to top button
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Scroll animations for sections
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close menu if open
+                    closeMenu();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
